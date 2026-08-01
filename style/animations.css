@@ -1,0 +1,80 @@
+@theme{
+    --animate-fadeUp: fadeUp 1.4s ease backwards;
+    --animate-brilhar: brilhar 1.1s ease backwards;
+    --animate-fadeIn: menuFadeIn 0.5s ease-out;
+
+}
+
+
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateX(10px)
+    }
+    to{
+        opacity:1;
+        transform:translateX(0)
+    }
+}
+
+@keyframes brilhar{
+    0%{
+        filter: brightness(0.8);
+        transform:scale(0.9);
+    }
+    50%{
+        filter: brightness(3);
+        transform:scale(1.25)
+    }
+    100%{
+        filter: brightness(1);
+        transform:scale(1)
+    }
+
+}
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@layer utilities{
+    .delay_1000{
+        animation-delay:1s
+    }
+    .delay_700{
+        animation-delay:0.7s
+    }
+    .delay_500{
+        animation-delay:0.5s
+    }
+    .delay_300{
+        animation-delay:0.3s
+    }    
+    .delay_200{
+        animation-delay:0.2s
+    }
+    .delay_100{
+        animation-delay:0.1s
+    }
+     .delay_1200{
+        animation-delay:1.2s
+    }
+    .delay_900{
+        animation-delay:0.9s
+    }
+    .delay_1700{
+        animation-delay:1.7s
+    }
+    .delay_1300{
+        animation-delay:1.3s
+    }
+}
+
+

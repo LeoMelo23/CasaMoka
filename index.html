@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Edu+TAS+Beginner:wght@400..700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/334b29d687.js" crossorigin="anonymous"></script>
+    <title>Casa Moka</title>
+</head>
+<body class="bg-creme font-['Advent_Pro']">
+
+    <header class="bg-cafe p-8 top-0 left-0 sticky z-100">
+        <article class="flex justify-between items-center w-full max-w-[1600px] mx-auto">
+            <p class="text-3xl font-bold text-cappuccino tracking-wider text-shadow-md text-shadow-black border-2 border-cappuccino p-2 rounded-lg duration-300 hover:scale-110 cursor-pointer">CasaMoka</p>
+              <button class="btnMenu text-cappuccino text-shadow-md text-shadow-black" id="btnMenu"><i class="fa-solid fa-bars"></i></button>
+            <nav class="hidden lg:block">
+                <ul class="flex gap-6 items-center font-['Shadows_Into_Light']">
+                    <li><a href="#home" class="text-creme text-2xl font-bold text-shadow-sm text-shadow-black duration-300 hover:text-latte tracking-wider">Home</a></li>
+                    <li><a href="#sobre" class="text-creme text-2xl font-bold text-shadow-sm text-shadow-black duration-300 hover:text-latte tracking-wider">Sobre</a></li>
+                    <li><a href="#menu" class="text-creme text-2xl font-bold text-shadow-sm text-shadow-black duration-300 hover:text-latte tracking-wider">Menu</a></li>
+                  
+                    <li><a href="#visite" class="text-creme text-2xl font-bold text-shadow-sm text-shadow-black duration-300 hover:text-latte tracking-wider">Visite</a></li>
+                </ul>
+            </nav>
+        </article>
+    </header>
+    <!-- MENU MOBILE -->
+     <div class="overlay" id="overlay"></div>
+      
+    <nav class="fixed duration-400 w-screen h-screen top-0 right-0 left-0 bottom-0 translate-x-full z-200 bg-black/90 backdrop-blur-md" id="menu-mobile">
+        <button class="absolute top-10 right-10 text-3xl cursor-pointer text-cappuccino font-bold" id="btn-close">X</button>
+          <ul class="min-h-screen flex justify-center items-center flex-col gap-6 font-['Shadows_Into_Light']">
+                <li><a href="#home" class="item-lista-mobile text-creme hover:text-cappuccino duration-300">Home</a></li>
+
+                <li><a href="#sobre" class="item-lista-mobile text-creme hover:text-cappuccino duration-300">Sobre</a></li>
+
+                <li><a href="#menu" class="item-lista-mobile text-creme hover:text-cappuccino duration-300">Menu</a></li>
+
+
+                <li><a href="#visite" class="item-lista-mobile text-creme hover:text-cappuccino duration-300">Visite</a></li>
+            </ul>
+    </nav>
+
+    <section id="home" class="section">
+        <article class="flex items-center mx-auto max-w-[1600px] justify-between font-['Advent_Pro'] mt-8 xl:mt-28 gap-40">
+          <article class="hidden xl:flex bg-cafe rounded-full justify-center items-center">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="550" height="550">
+              <defs>
+                <!-- Gradiente suave para a fumaça ficar mais fluida -->
+                <linearGradient id="smokeGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+          <stop offset="60%" stop-color="#eaeaea" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+          
+              <!-- ===== XÍCARA DO PRIMEIRO SVG ===== -->
+              <g id="xicara-base">
+                <!-- Pratinho (Pires) -->
+                <ellipse cx="120" cy="195" rx="65" ry="12" fill="#d0d0d0" />
+                <ellipse cx="120" cy="192" rx="60" ry="10" fill="#e6e6e6" />
+          
+                <!-- Asa da Xícara -->
+                <path d="M 160 135 C 190 140 190 175 140 170"
+              fill="none"
+              stroke="#e6e6e6"
+              stroke-width="10"
+              stroke-linecap="round" />
+          
+                <!-- Corpo da Xícara -->
+                <path d="M 90 130
+                 L 160 130
+                 C 160 130 155 185 120 185
+                 C 85 185 80 130 80 130 Z"
+              fill="#f4f4f4" />
+          
+                <!-- Sombra/Borda da Xícara -->
+                <path d="M 90 130 C 80 130 85 185 120 185 C 155 185 160 130 160 130"
+              fill="none"
+              stroke="#dcdcdc"
+              stroke-width="3" />
+          
+                <!-- Café (Superfície) -->
+                <ellipse cx="120" cy="130" rx="40" ry="8" fill="#5a3825" />
+                <ellipse cx="120" cy="130" rx="35" ry="6" fill="#3d2314" />
+          
+                <!-- Brilho na Xícara -->
+                <path d="C 110 140 A 35 35 0 0 0 95 175"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="3"
+              stroke-linecap="round"
+              opacity="0.6" />
+              </g>
+          
+              <!-- ===== FUMAÇA VOLUMOSA / TRABALHADA ===== -->
+              <g id="fumaca-densa-grupo">
+               
+                <!-- Camada de Fumaça 1: Formas Preenchidas Curvas -->
+                <g class="fumaca-densa camada-1">
+          <path d="M 110 120 C 105 110, 95 105, 98 95 C 102 83, 120 85, 115 70 C 110 57, 90 60, 95 45 C 100 32, 125 35, 120 20 C 115 20, 100 30, 90 45 C 80 60, 98 75, 92 90 C 86 103, 75 110, 100 125 Z"
+                fill="url(#smokeGradient)" />
+          <!-- Detalhes em espiral/linhas internas -->
+          <path d="M 105 90 C 115 85, 110 70, 100 70 C 92 70, 95 55, 108 50"
+                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+                </g>
+          
+                <!-- Camada de Fumaça 2: Volume Central com Caracóis -->
+                <g class="fumaca-densa camada-2">
+          <path d="M 120 122 C 125 112, 138 108, 132 95 C 125 80, 105 82, 112 65 C 118 50, 140 52, 130 35 C 122 20, 105 25, 100 15 C 112 18, 135 28, 142 45 C 150 62, 125 72, 138 88 C 148 100, 135 115, 125 125 Z"
+                fill="url(#smokeGradient)" />
+          <path d="M 125 95 C 132 88, 122 75, 115 78 C 108 80, 112 60, 128 55"
+                fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
+                </g>
+          
+                <!-- Camada de Fumaça 3: Linhas e Espirais de Suporte -->
+                <g class="fumaca-densa camada-3">
+          <path d="M 100 125 C 90 115, 80 95, 95 80 C 110 65, 85 50, 105 30"
+                fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.4" />
+          <path d="M 130 120 C 145 110, 150 90, 135 75 C 120 60, 140 45, 125 25"
+                fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.4" />
+                </g>
+          
+              </g>
+            </svg>
+          </article>
+          <article class="p-8 flex flex-col gap-4">
+              <p class="animate-fadeUp delay_200 eyerBrow-cafe">CAFÉ, SABOR & MOMENTOS</p>
+              <h1 class="font-['Shadows_Into_Light'] text-6xl lg:text-9xl text-cappuccino animate-fadeUp delay_100">Seu dia começa com um <span class="text-cafe text-shadow-lg text-shadow-amendoa animate-brilhar inline-block delay_1000">café</span></h1>
+              <h2 class="font-['Edu_TAS_Beginner'] text-xl lg:text-3xl animate-fadeUp delay_700">Sabores especiais, aromas marcantes e um ambiente feito para voce desacelerar.</h2>
+          
+              <div class="w-full gap-4 flex animate-fadeUp delay_500">
+                <a href="#menu" class="bg-latte text-cafe w-full max-w-40 rounded-lg px-4 py-2 text-center font-bold text-2xl hover:scale-110 duration-500 hover:bg-cafe hover:text-creme">Menu</a>
+                 <a href="#visite" class="bg-latte text-cafe w-full max-w-40 rounded-lg px-4 py-2 text-center font-bold text-2xl hover:scale-110 duration-500 hover:bg-cafe hover:text-creme">Visite</a>
+              </div>
+              <div class="flex gap-4 items-center mt-2 animate-fadeUp delay_300">
+                <a href="#" class="text-2xl w-12 h-12 flex justify-center items-center border-2  rounded-full bg-cafe text-creme hover:bg-creme hover:text-cafe duration-500 hover:scale-105 hover:translate-x-2 hover:-translate-y-2"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="text-2xl w-12 h-12 flex justify-center items-center border-2  rounded-full bg-cafe text-creme hover:bg-creme hover:text-cafe duration-500 hover:scale-105 hover:translate-x-2 hover:-translate-y-2"><i class="fa-brands fa-instagram"></i></a>
+                 <a href="#" class="text-2xl w-12 h-12 flex justify-center items-center border-2  rounded-full bg-cafe text-creme hover:bg-creme hover:text-cafe duration-500 hover:scale-105 hover:translate-x-2 hover:-translate-y-2"><i class="fa-brands fa-facebook"></i></a>
+              </div>
+          </article>
+        </article>
+    </section>
+    
+   <div class="linhaDecorativa mt-36 after:to-transparent after:via-cafe after:from-transparent before:to-transparent before:via-cafe before:from-transparent"><span class="text-lg">☕</span></div>
+
+        <article class="w-full max-w-[1600px] mx-auto p-6 flex flex-col reveal gap-4">
+          <p class="eyerBrow-cafe">Quem somos</p>
+          <h3 class="subtitle_cafe">Mais do que um simples café, um lugar para viver bons momentos.</h3>
+              <section class="flex mt-8 gap-4 scroll-mt-96 md:scroll-m-80  xl:flex-row flex-col-reverse" id="sobre">
+                <article class="flex flex-col gap-4 flex-1">
+          <p class="text-xl lg:text-2xl">Somos um espaço criado para transformar momentos simples em experiências especiais. Aqui, o café é apenas o começo: reunimos sabores, doces, sobremesas e opções preparadas com carinho para tornar cada visita única.</p>
+          <p class="text-xl lg:text-2xl">Seja para começar o dia com um bom café, fazer uma pausa na rotina, encontrar alguém especial ou simplesmente aproveitar um momento só seu, queremos que você se sinta em casa. Cada detalhe, do aroma que recebe você ao último sabor, foi pensado para criar uma experiência acolhedora, saborosa e inesquecível.</p>
+          <p class="text-xl lg:text-2xl">Mais do que uma cafeteria, somos um lugar para viver bons momentos, descobrir novos sabores e criar memórias que dão vontade de voltar.</p>
+                </article>
+                <article class="flex-1">
+          <img src="/assets/cafeteria.jpg" alt="" class="object-cover w-full border-4 border-cafe rotate-3">
+                </article>
+          </section>
+        </article>
+
+
+<article class="bg-amendoa min-h-[750px]">
+  
+          <section class="section-padrao section reveal" id="menu">
+           <p class="eyerBrow-cafe">Menu</p>
+           <h3 class="subtitle_cafe">Descubra nossas delícias</h3>
+           <div class="grid gap-4 mt-4 grid-cols-2 grid-rows-2 lg:grid-cols-4 items-center">
+      <button data-categoria="cafes" class="bg-cappuccino text-cafe text-xl px-4 py-2 rounded-md font-medium cursor-pointer hover:scale-105 duration-300 hover:bg-creme border-2 categoria-btn active">Cafés</button>
+      <button data-categoria="doces" class="bg-cappuccino text-cafe text-xl px-4 py-2 rounded-md font-medium cursor-pointer hover:scale-105 duration-300 hover:bg-creme border-2 categoria-btn">Doces</button>
+      <button data-categoria="chas" class="bg-cappuccino text-cafe text-xl px-4 py-2 rounded-md font-medium cursor-pointer hover:scale-105 duration-300 hover:bg-creme border-2 categoria-btn">Chás</button>
+      <button data-categoria="gelados" class="bg-cappuccino text-cafe text-xl px-4 py-2 rounded-md font-medium cursor-pointer hover:scale-105 duration-300 hover:bg-creme border-2 categoria-btn">Cafés Gelados</button>
+  </div>
+  
+
+  <!-- cafés -->
+  <div class="menu-categoria" data-categoria="cafes">
+    <div class="grid gap-6 lg:grid-cols-5">
+
+
+      <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/cafe-expresso.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Espresso</h4>
+          <p class="text-lg font-medium flex-1">Café intenso e aromático.</p>
+          <span>R$ 8,00</span>
+      </div>
+
+
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/latte.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Latte</h4>
+          <p class="text-lg font-medium flex-1">Café espresso, leite vaporizado e espuma.</p>
+          <span>R$ 14,00</span>
+      </div>
+
+
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/moccaccino.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Moccaccino</h4>
+          <p class="text-lg font-medium flex-1">Café espresso, leite vaporizado e calda de chocolate.</p>
+          <span>R$ 20,00</span>
+      </div>
+
+
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/cafe-avela.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Espresso com Avelã</h4>
+          <p class="text-lg font-medium flex-1">Café intenso e aromático.</p>
+          <span>R$ 15,00</span>
+      </div>
+      
+      
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/cappuccino.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Cappuccino</h4>
+          <p class="text-lg font-medium flex-1">Cappuccino Clássico.</p>
+          <span>R$ 16,00</span>
+      </div>
+    </div>
+  </div>
+
+
+<!-- doces e bolos -->
+  <div class="menu-categoria hidden" data-categoria="doces">
+    <div class="grid gap-6 lg:grid-cols-5">
+
+
+      <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/croassaint.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Croassaint de chocolate</h4>
+          <p class="text-lg font-medium flex-1">Pão doce de massa folhada e amanteigada, recheado com chocolate.</p>
+          <span>R$ 10,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/boloCenoura.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Bolo</h4>
+          <p class="text-lg font-medium flex-1">Bolo de Cenoura, brigadeiro chocolatudo ou laranja.</p>
+          <span>R$ 45,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/pudim.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Pudim</h4>
+          <p class="text-lg font-medium flex-1">Pudim de leite condensado.</p>
+          <span>R$ 30,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/mousse.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Mousse</h4>
+          <p class="text-lg font-medium flex-1">Mouse de chocolate, limão ou maracujá.</p>
+          <span>R$ 15,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/torta.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Torta Caseira</h4>
+          <p class="text-lg font-medium flex-1">Tortas caseiras recheadas de chocolate, morando ou limão.</p>
+          <span>R$ 50,00</span>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Chás -->
+   <div class="menu-categoria hidden" data-categoria="chas">
+    <div class="grid gap-6 lg:grid-cols-5">
+
+
+      <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/chapreto.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Chá Preto</h4>
+          <p class="text-lg font-medium flex-1">É feito com as folhas ainda mais velhas e passa por um processo de fermentação maior.</p>
+          <span>R$ 8,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/chaverde.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Chá Verde</h4>
+          <p class="text-lg font-medium flex-1">É elaborado com a planta um pouco mais velha do que a do chá branco.</p>
+          <span>R$ 8,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/chabranco.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Chá Branco</h4>
+          <p class="text-lg font-medium flex-1">É produzido a partir das folhas novas e brotos.</p>
+          <span>R$ 8,00</span>
+      </div>
+     
+    </div>
+  </div>
+
+
+<!-- Cafés Gelados -->
+  <div class="menu-categoria hidden" data-categoria="gelados">
+    <div class="grid gap-6 lg:grid-cols-5">
+
+
+      <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/icedcoffe.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Iced Coffe</h4>
+          <p class="text-lg font-medium flex-1">Café quente resfriado com cubos de gelo.</p>
+          <span>R$ 14,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/frappe.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Frappé</h4>
+          <p class="text-lg font-medium flex-1">Café solúvel batido com água e gelo.</p>
+          <span>R$ 20,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/cafecomlarnja.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Café com Laranja</h4>
+          <p class="text-lg font-medium flex-1">Café espresso resfriado com suco de laranja gelo.</p>
+          <span>R$ 20,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/cafecaramelo.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Café gelado com caramelo</h4>
+          <p class="text-lg font-medium flex-1">Café espresso com cobertura de caramelo e chantilly por cima.</p>
+          <span>R$ 25,00</span>
+      </div>
+       <div class="card-produto">
+         <div class="overflow-hidden"><img src="/assets/frabuccino.jpg" alt="cafe expresso" class="w-full object-cover aspect-square hover:scale-110 duration-300 cursor-pointer"></div>
+          <h4 class="text-xl font-bold tracking-wider font-['Edu_TAS_Beginner']">Frappuccino</h4>
+          <p class="text-lg font-medium flex-1">Café, leite, gelo, chantilly e caldas doces.</p>
+          <span>R$ 26,00</span>
+      </div>
+    </div>
+
+  </div>
+
+  
+ 
+      </section>
+</article>
+
+
+<article class="bg-[url('/assets/fundocoffe.jpg')] bg-cover bg-no-repeat bg-center">
+  
+          <section class="section-padrao section reveal" id="depoimentos">
+            <p class="eyerBrow-cafe">Depoimentos</p>
+            <h3 class="subtitle_cafe text-creme">O que nossos clientes falam de nós</h3>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+              <div class="bg-cappuccino rounded-lg shadow-xs shadow-cafe p-4 flex flex-col gap-3 hover:scale-110 hover:shadow-lg hover:shadow-cafe duration-300 cursor-pointer">
+                <p class="estrelas">⭐⭐⭐⭐⭐</p>
+                <p class="italic text-lg text-creme flex-1">O melhor cappuccino da cidade, sempre que tenho um tempinho vou até lá e curto o momento.</p>
+                <p class="text-lg">- Camila Melo</p>
+              </div>
+              <div class="bg-cappuccino rounded-lg shadow-xs shadow-cafe p-4 flex flex-col gap-3 hover:scale-110 hover:shadow-lg hover:shadow-cafe duration-300 cursor-pointer">
+                <p class="estrelas">⭐⭐⭐⭐⭐</p>
+                <p class="italic text-lg text-creme flex-1">Simplesmente sensacional o ambiente sem falar no bolo de cenoura MARAVILHOSO!!!!</p>
+                <p class="text-lg">- Pedro Ferraz</p>
+              </div>
+              <div class="bg-cappuccino rounded-lg shadow-xs shadow-cafe p-4 flex flex-col gap-3 hover:scale-110 hover:shadow-lg hover:shadow-cafe duration-300 cursor-pointer">
+                <p class="estrelas">⭐⭐⭐⭐⭐</p>
+                <p class="italic text-lg text-creme flex-1">Fui apenas para tomar um café e acabei experimentando quase todo o cardápio kkkkk, voltarei sempre.</p>
+                <p class="text-lg">- Leonardo Silva</p>
+              </div>
+              <div class="bg-cappuccino rounded-lg shadow-xs shadow-cafe p-4 flex flex-col gap-3 hover:scale-110 hover:shadow-lg hover:shadow-cafe duration-300 cursor-pointer">
+                <p class="estrelas">⭐⭐⭐⭐⭐</p>
+                <p class="italic text-lg text-creme flex-1">Bolo de brigadeiro com um chá  gelado já virou meu café da tarde preferido, eu amo esse lugar RECOMENDO DEMAIS!!!!!</p>
+                <p class="text-lg">- Aline Ferreira</p>
+              </div>
+            </div>
+          </section>
+</article>
+
+
+
+        <section class="section-padrao section reveal" id="info">
+          <p class="eyerBrow-cafe">Mais que uma cafeteria</p>
+          <h3 class="subtitle_cafe">Sabores que despertam momentos.</h3>
+          <article class="grid  lg:grid-cols-2 gap-x-56 gap-y-8 items-center">
+            <article>
+              <p class="text-xl lg:text-2xl">Entre aromas, sabores e boas companhias, existe sempre um motivo para fazer uma pausa.</p>
+              <p class="text-xl lg:text-2xl">De momentos de alegria a um verdadeiro atelier de delícias, cada visita é uma jornada culinária inesquecível.</p>
+            </article>
+            <article>
+              <h4 class="text-3xl text-cafe">Nossas formas de contato</h4>
+              <div class="flex flex-col gap-2.5 mt-4 bg-cappuccino rounded-lg p-4 w-full max-w-56">
+                <div class="flex gap-2.5 items-center">
+                  <a href="#" class="text-xl text-cafe"><i class="fa-brands fa-whatsapp"></i></a>
+                  <p class="text-lg text-cafe">11 99999 - 9999</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                  <a href="#" class="text-xl text-cafe"><i class="fa-brands fa-instagram"></i></a>
+                  <p class="text-lg text-cafe">@CasaMonka</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                  <a href="#" class="text-xl text-cafe"><i class="fa-brands fa-facebook"></i></a>
+                  <p class="text-lg text-cafe">CasaMonka</p>
+                </div>
+                <div class="flex gap-2.5 items-center">
+                  <a href="#" class="text-xl text-cafe"><i class="fa-solid fa-envelope"></i></a>
+                  <p class="text-lg text-cafe">casamonka@email.com</p>
+                </div>
+              </div>
+            </article>
+          </article>
+        </section>
+ <div class="linhaDecorativa mt-36 after:to-transparent after:via-cafe after:from-transparent before:to-transparent before:via-cafe before:from-transparent"><span class="text-lg">☕</span></div>
+<article class="bg-[url('/assets/cafefundo.png')] bg-cover">
+  
+          <section class="section-padrao section" id="visite">
+            <p class="eyerBrow-cafe text-creme">Visite</p>
+            <h3 class="subtitle_cafe text-creme">Venha nos visitar e abraça esse experiência única, nosso café te espera!</h3>
+
+            <article class="flex flex-col lg:flex-row gap-x-40 gap-y-4">
+              <article class="flex-1">
+                <img src="/assets/cafeteriaFora.jpg" alt="" class="w-full object-cover aspect-video">
+                <address class=" text-creme text-2xl mt-8">
+                    <p>Rua Lima Nova, 575</p>
+                    <p>Alto da Colina</p>
+                  </address>
+              </article>
+             
+                <article class="flex-1 bg-[#242321] border-10 border-madeira p-4 font-['Shadows_Into_Light'] text-creme ">
+                  <p class="text-4xl text-center">Horário de Funcionamento</p>
+            <div class="flex flex-col gap-3 mt-4 text-2xl lg:text-3xl">
+              <div class="flex items-center justify-between">
+                <p>Segunda-Feira</p>
+                
+                <p>Fechado</p>
+              </div>
+               <div class="flex items-center justify-between">
+                <p>Terça-Feira</p>
+                <p>09h-15h</p>
+              </div>
+               <div class="flex items-center justify-between">
+                <p>Quarta-Feira</p>
+                <p>08h-18h</p>
+              </div>
+               <div class="flex items-center justify-between">
+                <p>Quinta-Feira</p>
+                <p>08h-18h</p>
+              </div>
+               <div class="flex items-center justify-between">
+                <p>Sexta-Feira</p>
+                <p>08h-18h</p>
+              </div>
+               <div class="flex items-center justify-between">
+                <p>Sábado</p>
+                <p>08h-18h</p>
+              </div>
+               <div class="flex items-center justify-between">
+                <p>Domingo</p>
+                <p>12h-15h</p>
+              </div>
+            </div>
+                </article>
+             
+            </article>
+          </section>
+</article>
+
+
+
+        <footer class="bg-cafe   p-4 mt-20 text-creme">
+            <article class="flex flex-col gap-6 lg:flex-row items-center w-full max-w-[1600px] mx-auto justify-between">
+              <p class="text-3xl font-bold text-cappuccino tracking-wider text-shadow-md text-shadow-black border-2 border-cappuccino p-2 rounded-lg duration-300 hover:scale-110 cursor-pointer">CasaMoka</p>
+              <nav>
+                <ul class="flex gap-4 items-center">
+                  <li><a href="#" class="duration-300 hover:text-latte">Whatsapp</a></li>
+                  <li><a href="#" class="duration-300 hover:text-latte">Instagram</a></li>
+                  <li><a href="#home" class="duration-300 hover:text-latte">Home</a></li>
+                  <li><a href="#menu" class="duration-300 hover:text-latte">Menu</a></li>
+                </ul>
+              </nav>
+               <p>&copy CasaMoka. Todos os direitos reservados</p>
+            </article>
+        </footer>
+
+    
+<a href="#" class="btnWhats text-white"><i class="fa-brands fa-whatsapp"></i></a>
+<script src="cafeteria.js"></script>   
+</body>
+</html>

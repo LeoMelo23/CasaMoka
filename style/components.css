@@ -1,0 +1,39 @@
+@layer components{
+     .eyerBrow-cafe{
+        @apply font-medium font-['Advent_Pro'] text-cafe text-shadow-2xs text-shadow-cafe uppercase
+    }
+    .subtitle_cafe{
+        @apply font-['Edu_TAS_Beginner'] text-4xl text-cappuccino text-shadow-xs text-shadow-cafe
+        font-medium italic
+    }
+    .card-produto{
+        @apply text-cafe bg-creme p-4 rounded-sm flex flex-col gap-2
+    }
+     .reveal{
+        @apply opacity-0 translate-y-12 duration-800
+    }
+     .reveal.in{
+        @apply opacity-100 translate-y-0
+    }
+     .overlay{
+        @apply fixed inset-0 bg-black/40 backdrop-blur-sm opacity-0 invisible transition-all duration-400
+    }
+    .estrelas{
+        @apply text-xs opacity-50
+    }
+      .section{
+       @apply scroll-mt-40 md:scroll-mt-48
+    }
+     .section-padrao{
+        @apply max-w-[1600px] mx-auto mt-16 p-6 flex flex-col gap-4 justify-center lg:items-start
+    }
+     .linhaDecorativa{
+        @apply my-28 max-w-7xl mx-auto flex justify-center items-center gap-4 before:content-['']  before:h-[1px] before:bg-linear-to-r before:from-transparent before:via-amber-300/60 before:to-transparent before:flex-1 after:content-[''] after:h-[1px]  after:bg-linear-to-r after:from-transparent after:via-amber-300/60 after:to-transparent after:flex-1 after:rounded-full
+    }
+    .btnWhats{
+        @apply fixed bottom-3 w-10 h-10 flex justify-center items-center right-2 md:right-5 text-3xl p-6 bg-green-500 rounded-full  duration-400  hover:scale-125 hover:bg-green-600
+    }
+     .btnMenu{
+        @apply md:hidden text-3xl cursor-pointer
+    }
+}

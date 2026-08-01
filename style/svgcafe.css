@@ -1,0 +1,35 @@
+ /* Animações para a fumaça estilizada/volumosa */
+    .fumaca-densa {
+      animation: subir-curvas 3.5s ease-in-out infinite;
+      transform-origin: center bottom;
+      opacity: 0;
+    }
+
+    .camada-1 {
+      animation-delay: 0s;
+    }
+
+    .camada-2 {
+      animation-delay: 1.2s;
+    }
+
+    .camada-3 {
+      animation-delay: 2.2s;
+    }
+
+    @keyframes subir-curvas {
+      0% {
+        transform: translateY(10px) scale(0.8) rotate(-2deg);
+        opacity: 0;
+      }
+      25% {
+        opacity: 0.6;
+      }
+      60% {
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(-45px) scale(1.25) rotate(4deg);
+        opacity: 0;
+      }
+    }
